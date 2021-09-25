@@ -175,16 +175,16 @@ Citizen.CreateThread(function()
             if #(pos - vector3(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z)) < 1.5 then
                 sleep = 7
                 if doctorCount >= Config.MinimalDoctors then
-                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "~g~E~w~ - Call doctor")
+                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "~g~E~w~ - Appeler un médecin")
                 else
-                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "~g~E~w~ - Check in")
+                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "~g~E~w~ - Admission")
                 end
                 if IsControlJustReleased(0, 38) then
                     if doctorCount >= Config.MinimalDoctors then
                         TriggerServerEvent("hospital:server:SendDoctorAlert")
                     else
                         TriggerEvent('animations:client:EmoteCommandStart', {"notepad"})
-                        QBCore.Functions.Progressbar("hospital_checkin", "Checking in..", 2000, false, true, {
+                        QBCore.Functions.Progressbar("hospital_checkin", "Admission", 2000, false, true, {
                             disableMovement = true,
                             disableCarMovement = true,
                             disableMouse = false,
@@ -195,20 +195,20 @@ Citizen.CreateThread(function()
                             if bedId ~= nil then 
                                 TriggerServerEvent("hospital:server:SendToBed", bedId, true)
                             else
-                                QBCore.Functions.Notify("Beds are occupied..", "error")
+                                QBCore.Functions.Notify("Tous les lits sont occupé", "error")
                             end
                         end, function() -- Cancel
                             TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-                            QBCore.Functions.Notify("Checking in failed!", "error")
+                            QBCore.Functions.Notify("L'admission a echoué", "error")
                         end)
                     end
                 end
             elseif #(pos - vector3(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z)) < 4.5 then
                 sleep = 7
                 if doctorCount >= Config.MinimalDoctors then
-                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "Call")
+                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "Appel")
                 else
-                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "Check in")
+                    DrawText3D(Config.Locations["checking"].x, Config.Locations["checking"].y, Config.Locations["checking"].z, "Admission")
                 end
             end
             
@@ -220,7 +220,7 @@ Citizen.CreateThread(function()
                         if GetAvailableBed(closestBed) ~= nil then 
                             TriggerServerEvent("hospital:server:SendToBed", closestBed, false)
                         else
-                            QBCore.Functions.Notify("Beds are occupied..", "error")
+                            QBCore.Functions.Notify("Lits occupés", "error")
                         end
                     end
                 end
@@ -252,7 +252,7 @@ Citizen.CreateThread(function()
         if QBCore ~= nil then
             if isInHospitalBed and canLeaveBed then
                 local pos = GetEntityCoords(PlayerPedId())
-                DrawText3D(pos.x, pos.y, pos.z, "~g~E~w~ - To get out of bed..")
+                DrawText3D(pos.x, pos.y, pos.z, "~g~E~w~ - Sortir du lit..")
                 if IsControlJustReleased(0, 38) then
                     LeaveBed()
                 end
@@ -301,7 +301,7 @@ AddEventHandler('hospital:client:Revive', function()
     TriggerServerEvent("hospital:server:SetDeathStatus", false)
     TriggerServerEvent("hospital:server:SetLaststandStatus", false)
     
-    QBCore.Functions.Notify("You are completely healthy again!")
+    QBCore.Functions.Notify("Vous êtes soigné")
 end)
 
 RegisterNetEvent('hospital:client:SetPain')
@@ -346,7 +346,7 @@ AddEventHandler('hospital:client:HealInjuries', function(type)
         ResetPartial()
     end
     TriggerServerEvent("hospital:server:RestoreWeaponDamage")
-    QBCore.Functions.Notify("Your wounds have been healed!")
+    QBCore.Functions.Notify("Vos bléssures sont soignées")
 end)
 
 RegisterNetEvent('hospital:client:SendToBed')
@@ -357,7 +357,7 @@ AddEventHandler('hospital:client:SendToBed', function(id, data, isRevive)
     Citizen.CreateThread(function ()
         Citizen.Wait(5)
         if isRevive then
-            QBCore.Functions.Notify("You are being helped..")
+            QBCore.Functions.Notify("Vous êtes aidé..")
             Citizen.Wait(Config.AIHealTimer * 1000)
             TriggerEvent("hospital:client:Revive")
         else
@@ -388,8 +388,8 @@ AddEventHandler('hospital:client:SendBillEmail', function(amount)
         local charinfo = QBCore.Functions.GetPlayerData().charinfo
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = "Pillbox",
-            subject = "Hospital Costs",
-            message = "Dear " .. gender .. " " .. charinfo.lastname .. ",<br /><br />Hereby you received an email with the costs of the last hospital visit.<br />The final costs have become: <strong>$"..amount.."</strong><br /><br />We wish you a quick recovery!",
+            subject = "Coûts hospitaliers",
+            message = "Cher(e) " .. gender .. " " .. charinfo.lastname .. ",<br /><br />Vous avez reçu un courrier électronique avec les coûts de la dernière visite de l'hôpital.<br />Les coûts de votre hospitalisation sont de: <strong>$"..amount.."</strong><br /><br />Nous vous souhaitons un bon retablissement!",
             button = {}
         })
     end)
@@ -487,13 +487,13 @@ function DoLimbAlert()
             local limbDamageMsg = ''
             if #injured <= Config.AlertShowInfo then
                 for k, v in pairs(injured) do
-                    limbDamageMsg = limbDamageMsg .. "Your " .. v.label .. " feels "..Config.WoundStates[v.severity]
+                    limbDamageMsg = limbDamageMsg .. "Votre " .. v.label .. " a "..Config.WoundStates[v.severity]
                     if k < #injured then
                         limbDamageMsg = limbDamageMsg .. " | "
                     end
                 end
             else
-                limbDamageMsg = "You have pain on many places.."
+                limbDamageMsg = "Vous avez des douleurs a de nombreux endroits .."
             end
             QBCore.Functions.Notify(limbDamageMsg, "primary", 5000)
         end
@@ -502,7 +502,7 @@ end
 
 function DoBleedAlert()
     if not isDead and tonumber(isBleeding) > 0 then
-        QBCore.Functions.Notify("You are "..Config.BleedingStates[tonumber(isBleeding)].label, "error", 5000)
+        QBCore.Functions.Notify("Vous "..Config.BleedingStates[tonumber(isBleeding)].label, "error", 5000)
     end
 end
 
@@ -698,18 +698,18 @@ end
 
 function OutfitsLijst()
     QBCore.Functions.TriggerCallback('apartments:GetOutfits', function(outfits)
-        MenuTitle = "My Outfits :"
+        MenuTitle = "Mes tenues :"
         ClearMenu()
 
         if outfits == nil then
-            QBCore.Functions.Notify("You didnt save any outfits...", "error", 3500)
+            QBCore.Functions.Notify("Vous n'avez pas sauvegardé de tenues ...", "error", 3500)
             closeMenuFull()
         else
             for k, v in pairs(outfits) do
                 Menu.addButton(outfits[k].outfitname, "optionMenu", outfits[k]) 
             end
         end
-        Menu.addButton("Back", "MenuOutfits",nil)
+        Menu.addButton("Retour", "MenuOutfits",nil)
     end)
 end
 
@@ -717,21 +717,21 @@ function optionMenu(outfitData)
     MenuTitle = "What now?"
     ClearMenu()
 
-    Menu.addButton("Choose Outfit", "selectOutfit", outfitData) 
-    Menu.addButton("Delete Outfit", "removeOutfit", outfitData) 
-    Menu.addButton("Back", "OutfitsLijst",nil)
+    Menu.addButton("Choisissez la tenue", "selectOutfit", outfitData) 
+    Menu.addButton("Supprimer la tenue", "removeOutfit", outfitData) 
+    Menu.addButton("Retour", "OutfitsLijst",nil)
 end
 
 function selectOutfit(oData)
     TriggerServerEvent('clothes:selectOutfit', oData.model, oData.skin)
-    QBCore.Functions.Notify(oData.outfitname.." chosen", "success", 2500)
+    QBCore.Functions.Notify(oData.outfitname.." choisi", "success", 2500)
     closeMenuFull()
     changeOutfit()
 end
 
 function removeOutfit(oData)
     TriggerServerEvent('clothes:removeOutfit', oData.outfitname)
-    QBCore.Functions.Notify(oData.outfitname.." has been deleted", "success", 2500)
+    QBCore.Functions.Notify(oData.outfitname.." a été supprimé", "success", 2500)
     closeMenuFull()
 end
 

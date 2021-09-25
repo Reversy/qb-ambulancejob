@@ -6,7 +6,7 @@ Config.WipeInventoryOnRespawn = true
 Config.Locations = {
     ["checking"] = vector4(308.19, -595.35, 43.29, 0.0),
     ["duty"] = {
-        [1] = vector4(311.18, -599.25, 43.29, 0.0),
+        [1] = vector4(313.01, -594.53, 43.28, 0.0),
         [2] = vector4(-254.88, 6324.5, 32.58, 0.0),
     },    
     ["vehicle"] = {
@@ -18,30 +18,31 @@ Config.Locations = {
         [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },    
     ["armory"] = {
-        [1] = vector4(309.93, -602.94, 43.29, 90.654),
+        [1] = vector4(309.88, -569.04, 43.28, 90.654),
         [2] = vector4(-245.13, 6315.71, 32.82, 90.654),
     },
     ["roof"] = {
-        [1] = vector4(338.5, -583.85, 74.16, 245.5),
+        [1] = vector4(332.24, -595.62, 43.28, 245.5),
     },
     ["main"] = {
         [1] = vector4(298.44, -599.7, 43.29, 76.0),
     },        
     ["beds"] = {
-        [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
-        [2] = {coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868},
-        [3] = {coords = vector4(354.12, -593.12, 43.1, 336.32), taken = false, model = 2117668672},
-        [4] = {coords = vector4(350.79, -591.8, 43.1, 336.32), taken = false, model = 2117668672},
-        [5] = {coords = vector4(346.99, -590.48, 43.1, 336.32), taken = false, model = 2117668672}, 
-        [6] = {coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327},
-        [7] = {coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327}, 
-        [8] = {coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327},
+        [1] = {coords = vector4(313.71, -579.3, 45.0, 172.1), taken = false, model = 1631638868},
+        [2] = {coords = vector4(309.19, -577.55, 45.0, 172.1), taken = false, model = 1631638868},
+        [3] = {coords = vector4(307.92, -581.35, 45.0, 327.14), taken = false, model = 1631638868},
+        [4] = {coords = vector4(311.14, -582.99, 45.0, 327.14), taken = false, model = 1631638868},
+        [5] = {coords = vector4(314.56, -583.98, 45.0, 327.14), taken = false, model = 1631638868}, 
+        [6] = {coords = vector4(317.83, -585.32, 45.0, 327.14), taken = false, model = -1091386327},
+        [7] = {coords = vector4(319.34, -580.92, 45.0, 172.1), taken = false, model = -1091386327}, 
+        [8] = {coords = vector4(324.2, -582.85, 45.0, 172.1), taken = false, model = -1091386327},
     }, 
     ["stations"] = {
         [1] = {label = "Doctor's Post Paleto", coords = vector4(-254.88, 6324.5, 32.58, 3.5)},
-        [2] = {label = "Pillbox Hospital", coords = vector4(304.27, -600.33, 43.28, 272.249)}
+        [2] = {label = "Pillbox Hopital", coords = vector4(304.27, -600.33, 43.28, 272.249)}
     }
 }
+
 
 Config.Vehicles = {
     ["ambulance"] = "Ambulance",

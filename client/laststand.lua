@@ -64,7 +64,7 @@ function SetLaststand(bool, spawn)
                     CanBePickuped = true
                     Config.DeathTime = LaststandTime
                 elseif LaststandTime - 1 <= 0 then
-                    QBCore.Functions.Notify("You have bled out..", "error")
+                    QBCore.Functions.Notify("Vous vous êtes vidé de votre sang", "error")
                     SetLaststand(false)
                     local killer_2, killerWeapon = NetworkGetEntityKillerOfPlayer(player)
                     local killer = GetPedSourceOfDeath(playerPed)
@@ -74,8 +74,8 @@ function SetLaststand(bool, spawn)
                     end
     
                     local killerId = NetworkGetPlayerIndexFromPed(killer)
-                    local killerName = killerId ~= -1 and GetPlayerName(killerId) .. " " .. "("..GetPlayerServerId(killerId)..")" or "Himself or a NPC"
-                    local weaponLabel = QBCore.Shared.Weapons[killerWeapon] ~= nil and QBCore.Shared.Weapons[killerWeapon]["label"] or "Unknown"
+                    local killerName = killerId ~= -1 and GetPlayerName(killerId) .. " " .. "("..GetPlayerServerId(killerId)..")" or "suicide ou PNJ"
+                    local weaponLabel = QBCore.Shared.Weapons[killerWeapon] ~= nil and QBCore.Shared.Weapons[killerWeapon]["label"] or "Inconnue"
                     local weaponName = QBCore.Shared.Weapons[killerWeapon] ~= nil and QBCore.Shared.Weapons[killerWeapon]["name"] or "Unknown_Weapon"
                     TriggerServerEvent("qb-log:server:CreateLog", "death", GetPlayerName(player) .. " ("..GetPlayerServerId(player)..") is dead", "red", "**".. killerName .. "** has killed  ".. GetPlayerName(player) .." with a **".. weaponLabel .. "** (" .. weaponName .. ")")
                     deathTime = 0
@@ -131,7 +131,7 @@ RegisterNetEvent('hospital:client:HelpPerson')
 AddEventHandler('hospital:client:HelpPerson', function(targetId)
     local ped = PlayerPedId()
     isHealingPerson = true
-    QBCore.Functions.Progressbar("hospital_revive", "Reviving person..", math.random(30000, 60000), false, true, {
+    QBCore.Functions.Progressbar("hospital_revive", "Vous soignez la personne", math.random(30000, 60000), false, true, {
         disableMovement = false,
         disableCarMovement = false,
         disableMouse = false,
@@ -143,11 +143,11 @@ AddEventHandler('hospital:client:HelpPerson', function(targetId)
     }, {}, {}, function() -- Done
         isHealingPerson = false
         ClearPedTasks(ped)
-        QBCore.Functions.Notify("You revived a person.")
+        QBCore.Functions.Notify("Vous avez soigné la personne.")
         TriggerServerEvent("hospital:server:RevivePlayer", targetId)
     end, function() -- Cancel
         isHealingPerson = false
         ClearPedTasks(ped)
-        QBCore.Functions.Notify("Canceled!", "error")
+        QBCore.Functions.Notify("Annulé!", "error")
     end)
 end)

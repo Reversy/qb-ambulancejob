@@ -1,60 +1,60 @@
 WeaponDamageList = {
-	["WEAPON_UNARMED"] = "Fist prints",
-	["WEAPON_ANIMAL"] = "Bite wound of an animal",
-	["WEAPON_COUGAR"] = "Bite wound of an animal",
-	["WEAPON_KNIFE"] = "Stab wound",
-	["WEAPON_NIGHTSTICK"] = "Bump from a stick or something similar",
-	["WEAPON_BREAD"] = "Dent in your head from a baguette!",
-	["WEAPON_HAMMER"] = "Bump from a stick or something similar",
-	["WEAPON_BAT"] = "Bump from a stick or something similar",
-	["WEAPON_GOLFCLUB"] = "Bump from a stick or something similar",
-	["WEAPON_CROWBAR"] = "Bump from a stick or something similar",
-	["WEAPON_PISTOL"] = "Pistol bullets in the body",
-	["WEAPON_COMBATPISTOL"] = "Pistol bullets in the body",
-	["WEAPON_APPISTOL"] = "Pistol bullets in the body",
-	["WEAPON_PISTOL50"] = "50 Cal Pistol bullets in the body",
-	["WEAPON_MICROSMG"] = "SMG bullets in the body",
-	["WEAPON_SMG"] = "SMG bullets in the body",
-	["WEAPON_ASSAULTSMG"] = "SMG bullets in the body",
-	["WEAPON_ASSAULTRIFLE"] = "Rifle bullets in the body",
-	["WEAPON_CARBINERIFLE"] = "Rifle bullets in the body",
-	["WEAPON_ADVANCEDRIFLE"] = "Rifle bullets in the body",
-	["WEAPON_MG"] = "Machine Gun bullets in the body",
-	["WEAPON_COMBATMG"] = "Machine Gun bullets in the body",
-	["WEAPON_PUMPSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_SAWNOFFSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_ASSAULTSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_BULLPUPSHOTGUN"] = "Shotgun bullets in the body",
-	["WEAPON_STUNGUN"] = "Taser prints",
-	["WEAPON_SNIPERRIFLE"] = "Sniper bullets in the body",
-	["WEAPON_HEAVYSNIPER"] = "Sniper bullets in the body",
-	["WEAPON_REMOTESNIPER"] = "Sniper bullets in the body",
-	["WEAPON_GRENADELAUNCHER"] = "Burns and fragments",
+	["WEAPON_UNARMED"] = "Marque de poing",
+	["WEAPON_ANIMAL"] = "Morse d'un animal",
+	["WEAPON_COUGAR"] = "Morse d'un animal",
+	["WEAPON_KNIFE"] = "Entaille de couteau",
+	["WEAPON_NIGHTSTICK"] = "Marque d'un bâton ou quelque chose de similaire",
+	["WEAPON_BREAD"] = " Un coup de baguette dans la tête !",
+	["WEAPON_HAMMER"] = "Marque d'un bâton ou quelque chose de similaire",
+	["WEAPON_BAT"] = "Marque d'un bâton ou quelque chose de similaire",
+	["WEAPON_GOLFCLUB"] = "Marque d'un bâton ou quelque chose de similaire",
+	["WEAPON_CROWBAR"] = "Marque d'un bâton ou quelque chose de similaire",
+	["WEAPON_PISTOL"] = "Balles de pistolet dans le corps",
+	["WEAPON_COMBATPISTOL"] = "Balles de pistolet dans le corps",
+	["WEAPON_APPISTOL"] = "Balles de pistolet dans le corps",
+	["WEAPON_PISTOL50"] = "50 Cal Balles de pistolet dans le corps",
+	["WEAPON_MICROSMG"] = "Balles de SMG dans le corps",
+	["WEAPON_SMG"] = "Balles de SMG dans le corps",
+	["WEAPON_ASSAULTSMG"] = "Balles de SMG dans le corps",
+	["WEAPON_ASSAULTRIFLE"] = "Balles de fusil dans le corps",
+	["WEAPON_CARBINERIFLE"] = "Balles de fusil dans le corps",
+	["WEAPON_ADVANCEDRIFLE"] = "Balles de fusil dans le corps",
+	["WEAPON_MG"] = "Machine Gun balles dans le corps",
+	["WEAPON_COMBATMG"] = "Machine Gun balles dans le corps",
+	["WEAPON_PUMPSHOTGUN"] = "Balles de fusil a pompe dans le corps",
+	["WEAPON_SAWNOFFSHOTGUN"] = "Balles de fusil a pompe dans le corps",
+	["WEAPON_ASSAULTSHOTGUN"] = "Balles de fusil a pompe dans le corps",
+	["WEAPON_BULLPUPSHOTGUN"] = "Balles de fusil a pompe dans le corps",
+	["WEAPON_STUNGUN"] = "Marque de taser",
+	["WEAPON_SNIPERRIFLE"] = "Balles de sniper dans le corps",
+	["WEAPON_HEAVYSNIPER"] = "Balles de sniper dans le corps",
+	["WEAPON_REMOTESNIPER"] = "Balles de sniper dans le corps",
+	["WEAPON_GRENADELAUNCHER"] = "Brûlures et fragments",
 	["WEAPON_GRENADELAUNCHER_SMOKE"] = "Smoke Damage",
-	["WEAPON_RPG"] = "Burns and fragments",
-	["WEAPON_STINGER"] = "Burns and fragments",
-	["WEAPON_MINIGUN"] = "Very much bullets in the body",
-	["WEAPON_GRENADE"] = "Burns and fragments",
-	["WEAPON_STICKYBOMB"] = "Burns and fragments",
+	["WEAPON_RPG"] = "Brûlures et fragments",
+	["WEAPON_STINGER"] = "Brûlures et fragments",
+	["WEAPON_MINIGUN"] = "Very much balles dans le corps",
+	["WEAPON_GRENADE"] = "Brûlures et fragments",
+	["WEAPON_STICKYBOMB"] = "Brûlures et fragments",
 	["WEAPON_SMOKEGRENADE"] = "Smoke Damage",
-	["WEAPON_BZGAS"] = "Gas Damage",
-	["WEAPON_MOLOTOV"] = "Heavy Burns",
+	["WEAPON_BZGAS"] = "Dommages causés par les gaz",
+	["WEAPON_MOLOTOV"] = "Graves brûlures",
 	["WEAPON_FIREEXTINGUISHER"] = "Sprayed on :)",
-	["WEAPON_PETROLCAN"] = "Petrol Can Damage",
-	["WEAPON_FLARE"] = "Flare Damage",
-	["WEAPON_BARBED_WIRE"] = "Barbed Wire Damage",
-	["WEAPON_DROWNING"] = "Drowned",
-	["WEAPON_DROWNING_IN_VEHICLE"] = "Drowned",
-	["WEAPON_BLEEDING"] = "Lost a lot of blood",
-	["WEAPON_ELECTRIC_FENCE"] = "Electric Fence Wounds",
-	["WEAPON_EXPLOSION"] = "Many burns (from explosives)",
-	["WEAPON_FALL"] = "Broken bones",
-	["WEAPON_EXHAUSTION"] = "Died of Exhaustion",
+	["WEAPON_PETROLCAN"] = "Brûlure et traces d'essence",
+	["WEAPON_FLARE"] = "Dégâts de fusée",
+	["WEAPON_BARBED_WIRE"] = "Dégâts de fil de fer barbelé",
+	["WEAPON_DROWNING"] = "Noyée",
+	["WEAPON_DROWNING_IN_VEHICLE"] = "Noyée",
+	["WEAPON_BLEEDING"] = "Perdu beaucoup de sang",
+	["WEAPON_ELECTRIC_FENCE"] = "Blessures de clôture électrique",
+	["WEAPON_EXPLOSION"] = "Nombreuses brûlures (par explosifs)",
+	["WEAPON_FALL"] = "Os cassés",
+	["WEAPON_EXHAUSTION"] = "Mort d'épuisement",
 	["WEAPON_HIT_BY_WATER_CANNON"] = "Water Cannon Pelts",
-	["WEAPON_RAMMED_BY_CAR"] = "Car accident",
-	["WEAPON_RUN_OVER_BY_CAR"] = "Hit by a vehicle",
-	["WEAPON_HELI_CRASH"] = "Helicopter crash",
-	["WEAPON_FIRE"] = "Many burns",
+	["WEAPON_RAMMED_BY_CAR"] = "Accident de voiture",
+	["WEAPON_RUN_OVER_BY_CAR"] = "Percuter par une voiture",
+	["WEAPON_HELI_CRASH"] = "Crash helicopter ",
+	["WEAPON_FIRE"] = "Brûlures nombreuses",
 }
 
 onPainKillers = false
@@ -264,7 +264,7 @@ function CheckWeaponDamage(ped)
         if HasPedBeenDamagedByWeapon(ped, GetHashKey(k), 0) then
             detected = true
             if not IsInDamageList(k) then
-                TriggerEvent("chatMessage", "STATUS", "error", v)
+                TriggerEvent("chatMessage", "Santé:", "error", v)
                 table.insert(CurrentDamageList, k)
             end
 	end
@@ -371,7 +371,7 @@ end
 RegisterNetEvent('hospital:client:UseBandage')
 AddEventHandler('hospital:client:UseBandage', function()
     local ped = PlayerPedId()
-    QBCore.Functions.Progressbar("use_bandage", "Using bandage..", 4000, false, true, {
+    QBCore.Functions.Progressbar("use_bandage", "Utilisation bandage", 4000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
@@ -400,7 +400,7 @@ end)
 RegisterNetEvent('hospital:client:UsePainkillers')
 AddEventHandler('hospital:client:UsePainkillers', function()
     local ped = PlayerPedId()
-    QBCore.Functions.Progressbar("use_bandage", "Taking painkillers", 3000, false, true, {
+    QBCore.Functions.Progressbar("use_bandage", "Prise antidouleur", 3000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
@@ -419,7 +419,7 @@ AddEventHandler('hospital:client:UsePainkillers', function()
         end
     end, function() -- Cancel
         StopAnimTask(ped, "mp_suicide", "pill", 1.0)
-        QBCore.Functions.Notify("Failed", "error")
+        QBCore.Functions.Notify("Échoué", "error")
     end)
 end)
 

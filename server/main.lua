@@ -26,7 +26,7 @@ AddEventHandler('hospital:server:RespawnAtHospital', function()
 		end
 		Player.Functions.RemoveMoney("bank", Config.BillCost, "respawned-at-hospital")
 		TriggerEvent('qb-bossmenu:server:addAccountMoney', "ambulance", Config.BillCost)
-		TriggerClientEvent('QBCore:Notify', src, 'All your possessions have been taken..', 'error')
+		TriggerClientEvent('QBCore:Notify', src, 'Tous vos biens ont été pris ..', 'error')
 		TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
 		return
 	end
@@ -128,7 +128,7 @@ AddEventHandler('hospital:server:RevivePlayer', function(playerId, isOldMan)
 				TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['firstaid'], "remove")
 				TriggerClientEvent('hospital:client:Revive', Patient.PlayerData.source)
 			else
-				TriggerClientEvent('QBCore:Notify', src, "You don\'t have enough money on you..", "error")
+				TriggerClientEvent('QBCore:Notify', src, "Vous n'avez pas assez d'argent sur vous..", "error")
 			end
 		else
 			Player.Functions.RemoveItem('firstaid', 1)
@@ -145,7 +145,7 @@ AddEventHandler('hospital:server:SendDoctorAlert', function()
 		local Player = QBCore.Functions.GetPlayer(v)
 		if Player ~= nil then 
 			if (Player.PlayerData.job.name =="ambulance" and Player.PlayerData.job.onduty) then
-				TriggerClientEvent("hospital:client:SendAlert", v, "A doctor is needed at Pillbox Hospital")
+				TriggerClientEvent("hospital:client:SendAlert", v, "Un médecin est demandé à Pillbox Hospital")
 			end
 		end
 	end
@@ -159,10 +159,10 @@ AddEventHandler('hospital:server:MakeDeadCall', function(blipSettings, gender, s
 	if gender == 1 then genderstr = "Woman" end
 
 	if street2 ~= nil then
-		TriggerClientEvent("112:client:SendAlert", -1, "A ".. genderstr .." is injured at " ..street1 .. " "..street2, blipSettings)
+		TriggerClientEvent("112:client:SendAlert", -1, "A ".. genderstr .." est blessé a " ..street1 .. " "..street2, blipSettings)
 		TriggerClientEvent('qb-policealerts:client:AddPoliceAlert', -1, {
             timeOut = 5000,
-            alertTitle = "Injured person",
+            alertTitle = "Personne blessée",
             details = {
                 [1] = {
                     icon = '<i class="fas fa-venus-mars"></i>',
@@ -176,10 +176,10 @@ AddEventHandler('hospital:server:MakeDeadCall', function(blipSettings, gender, s
             callSign = nil,
         }, true)
 	else
-		TriggerClientEvent("112:client:SendAlert", -1, "A ".. genderstr .." is injured at "..street1, blipSettings)
+		TriggerClientEvent("112:client:SendAlert", -1, "A ".. genderstr .." est blessé à "..street1, blipSettings)
 		TriggerClientEvent('qb-policealerts:client:AddPoliceAlert', -1, {
             timeOut = 5000,
-            alertTitle = "Injured person",
+            alertTitle = "Personne blessée",
             details = {
                 [1] = {
                     icon = '<i class="fas fa-venus-mars"></i>',
